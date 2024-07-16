@@ -1,4 +1,13 @@
-import { createApp } from 'vue'
-import App from './App.vue'
+import { createApp } from 'vue';
+import App from './App.vue';
+import PrimeVue from 'primevue/config';
 
-createApp(App).mount('#app')
+// PrimeVue CSS
+import 'primeicons/primeicons.css';                          // Icons
+import 'primeflex/primeflex.css';                            // PrimeFlex
+
+const app = createApp(App);
+
+app.use(PrimeVue);
+
+app.mount('#app');
