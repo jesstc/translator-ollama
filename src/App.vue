@@ -1,14 +1,18 @@
 <template>
   <NavBanner />
+  <h2>Translation Assistant</h2>
+  <TranslateSteps />
 </template>
 
 <script lang="ts">
 import { Options, Vue } from 'vue-class-component';
 import NavBanner from './components/NavBanner.vue';
+import TranslateSteps from './components/TranslateSteps.vue';
 
 @Options({
   components: {
     NavBanner,
+    TranslateSteps,
   },
 })
 export default class App extends Vue {}
