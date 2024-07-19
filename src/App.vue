@@ -1,7 +1,7 @@
 <template>
   <NavBanner />
-  <div class="flex-col p-4">
-    <h2 class="text-left">Translation Assistant</h2>
+  <div class="flex-col p-4 text-left">
+    <h2 class="m-2">Translation Assistant</h2>
     <TranslateSteps />
   </div>
 </template>
