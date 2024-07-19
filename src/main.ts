@@ -9,6 +9,7 @@ import StepItem from 'primevue/stepitem';
 import Step from 'primevue/step';
 import StepPanel from 'primevue/steppanel';
 import Button from 'primevue/button';
+import Select from 'primevue/select';
 
 // PrimeVue CSS
 import 'primeicons/primeicons.css';                          // Icons
@@ -34,5 +35,6 @@ app.component('StepItem', StepItem);
 app.component('Step', Step);
 app.component('StepPanel', StepPanel);
 app.component('Button', Button);
+app.component('Select', Select);
 
 app.mount('#app');
