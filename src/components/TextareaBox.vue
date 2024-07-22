@@ -19,11 +19,15 @@
                 :invalid="text.length >= 4000"
                 @input="onInput"
                 />
+      <Message v-if="visible" severity="error" 
+                :life="5000"
+                :style="messageStyle" >
+        The maximum number of characters is 4000. <br>
+        If the content exceeds this limit, please use an Excel file for translation.
+      </Message>
       <small class="text-right px-1">{{ charCount }} / {{ maxChars }}</small>
     </div>
       
-    
-    
   </div>
 </template>
 
@@ -48,6 +52,13 @@ export default defineComponent({
     const text = ref<string>('');
     const maxChars:number = 4000;
     const charCount = computed(() => text.value.length);
+    const visible = ref<boolean>(false);
+
+    const messageStyle = {
+      position: 'fixed',
+      bottom: '1rem',
+      right: '1rem',
+    };
 
     const copyText = async () => {
       try {
@@ -64,6 +75,11 @@ export default defineComponent({
         if (pastedText.length > maxChars) {
           const remainingChars = maxChars - text.value.length;
           pastedText = pastedText.slice(0, remainingChars);
+          
+          visible.value = true;
+          setTimeout(() => {
+            visible.value = false;
+          }, 5000);
         }
         text.value = pastedText;
         console.log('Text pasted from clipboard');
@@ -74,19 +90,27 @@ export default defineComponent({
 
     const onInput = (event: Event) => {
       const input = event.target as HTMLTextAreaElement;
+
       if (input.value.length > maxChars) {
         input.value = input.value.slice(0, maxChars);
         text.value = input.value;
+
+        visible.value = true;
+        setTimeout(() => {
+          visible.value = false;
+        }, 5000);
       }
     };
 
     return {
       text,
+      visible,
       maxChars,
       charCount,
       copyText,
       pasteText,
       onInput,
+      messageStyle,
     };
   },
 })
