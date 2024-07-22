@@ -4,7 +4,7 @@
 <div class="mt-3">
   <Stepper value="1">
     <StepItem value="1">
-      <Step><b class="text-lg">Translate Type</b></Step>
+      <Step><b class="text-lg">Select The Translate Type: </b></Step>
       <StepPanel>
         <ButtonList @updated="onUpdateSelect" />
       </StepPanel>
@@ -15,7 +15,7 @@
 <div class="mt-3">
   <Stepper value="2" >
     <StepItem value="2">
-      <Step><b class="text-lg">Select Translate Model</b></Step>
+      <Step><b class="text-lg">Select The Translate Model: </b></Step>
       <StepPanel>
         <Selection @updated="onUpdateModel" />
       </StepPanel>
@@ -28,12 +28,12 @@
     <StepItem value="3">
       <Step><b class="text-lg">Enter / Upload the Content You Want to Translate: </b></Step>
       <StepPanel>
-        <div class="grid grid-nogutter mt-2 align-items-center">
+        <div class="grid grid-nogutter mt-2 align-items-start">
           <TextareaBox class="col" label="Original Content" />
-          <div class="col-1 text-center">
+          <div class="col-1 text-center align-self-center">
             <i class="pi pi-arrow-right" style="color: 'var(--p-primary-color)'"></i>
           </div>
-          <TextareaBox class="col" label="Translated Content" />
+          <TextareaBox class="col" label="Translated Content" :isTranslated="true" />
         </div>
       </StepPanel>
     </StepItem>

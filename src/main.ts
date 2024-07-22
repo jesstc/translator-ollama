@@ -11,7 +11,6 @@ import StepPanel from 'primevue/steppanel';
 import Button from 'primevue/button';
 import Select from 'primevue/select';
 import Textarea from 'primevue/textarea';
-import FloatLabel from 'primevue/floatlabel';
 
 // PrimeVue CSS
 import 'primeicons/primeicons.css';                          // Icons
@@ -39,6 +38,5 @@ app.component('StepPanel', StepPanel);
 app.component('Button', Button);
 app.component('Select', Select);
 app.component('Textarea', Textarea);
-app.component('FloatLabel', FloatLabel);
 
 app.mount('#app');
